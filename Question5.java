@@ -2,6 +2,33 @@ import java.util.Scanner;
 
 public class Question5
 {
+
+  public static int mode(int array[], int numbers)
+  {
+    int maxValue = 0;  
+    int maxCount = 0;
+
+    for (int i = 0; i < numbers; i++)
+    {
+      int count = 0;
+
+      for ( int j = 0; j < numbers; j++)
+      {
+        if (array[j] == array[i])
+        {
+          count++;
+        }
+      }
+
+      if (count > maxCount)
+      {
+        maxCount = count;
+        maxValue = array[i];
+      }
+    }
+
+    return maxValue;
+  }
   public static void main(String[] args)
   {
     /**
@@ -25,8 +52,24 @@ public class Question5
      *     2
      * Hint: Use a loop to get input. Use another 2 loops to find the mode
      */
-     
-    Scanner in = new Scanner(System.in);
     
+     
+
+    Scanner in = new Scanner(System.in);
+
+    System.out.print("Enter number length: ");
+    int numLength = in.nextInt();
+
+    int numList[] = new int[numLength];
+
+    System.out.println("Enter " + numLength + " numbers: ");
+    for (int i = 0; i < numLength; i++)
+    {
+        int temp = in.nextInt();
+        numList[i] = temp;
+    }
+    in.close();
+    System.out.println("Mode ::"+mode(numList, numLength));
   }
 }
+
