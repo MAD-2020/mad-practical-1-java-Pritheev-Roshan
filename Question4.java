@@ -18,7 +18,12 @@ public class Question4
      */
      
     Scanner in = new Scanner(System.in);
+
+    System.out.print("Enter the base for your triangle: ");
     int base = in.nextInt();
+    System.out.println();
+
+    in.close();
 
     for(int i=0;i<=base;i++)
     {
